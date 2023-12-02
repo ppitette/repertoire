@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Import{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h3>Import du chant : {{ secli.titre|lower|capitalize }} ({{ secli.cote }})</h3>
+        <hr>
+        {{ form_start(form) }}
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Secli</th>
+                        <th scope="col"></th>
+                        <th scope="col">Import</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ secli.titre }}</td>
+                        <td>Titre</td>
+                        <td>{{ form_widget(form.titre) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.cote }}</td>
+                        <td>Cote</td>
+                        <td>{{ form_widget(form.cote) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.coteNew }}</td>
+                        <td>Nouvelle Cote</td>
+                        <td>{{ form_widget(form.coteNew) }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Cote éditeur</td>
+                        <td>{{ form_widget(form.coteEdit) }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Source</td>
+                        <td>{{ form_widget(form.source) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.auteur }}</td>
+                        <td>Auteur(s)</td>
+                        <td>{{ form_widget(form.auteur) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.compositeur }}</td>
+                        <td>Compositeur(s)</td>
+                        <td>{{ form_widget(form.compositeur) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.annee }}</td>
+                        <td>Année</td>
+                        <td>{{ form_widget(form.annee) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.snpls }}</td>
+                        <td>Promotion SNPLS</td>
+                        <td>{{ form_widget(form.snpls) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ secli.editeur }}</td>
+                        <td>Éditeur</td>
+                        <td>{{ form_widget(form.editeur) }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-sm btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

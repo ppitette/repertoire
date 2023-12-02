@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chant{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Chant</h2>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ chant.id }}</td>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ chant.titre }}</td>
+                </tr>
+                <tr>
+                    <th>Annee</th>
+                    <td>{{ chant.annee }}</td>
+                </tr>
+                <tr>
+                    <th>Cote</th>
+                    <td>{{ chant.cote }}</td>
+                </tr>
+                <tr>
+                    <th>CoteNew</th>
+                    <td>{{ chant.coteNew }}</td>
+                </tr>
+                <tr>
+                    <th>CoteEdit</th>
+                    <td>{{ chant.coteEdit }}</td>
+                </tr>
+                <tr>
+                    <th>Snpls</th>
+                    <td>{{ chant.snpls }}</td>
+                </tr>
+                <tr>
+                    <th>Source</th>
+                    <td>{{ chant.source }}</td>
+                </tr>
+                <tr>
+                    <th>Secli</th>
+                    <td>{{ chant.secli }}</td>
+                </tr>
+                <tr>
+                    <th>Texte</th>
+                    <td>{{ chant.texte }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_chant_index') }}" class="btn btn-sm btn-primary">Retour</a>
+
+        <a href="{{ path('app_chant_edit', {'id': chant.id}) }}" class="btn btn-sm btn-warning">Éditer</a>
+
+        {{ include('chant/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

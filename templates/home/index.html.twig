@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Répertoire{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <h2>Application</h2>
+    <hr>
+    <div class="row">
+        <div class="col-2"><strong>Chants :</strong></div>
+        <div class="col-1">{{stat[0] }}</div>
+    </div>
+    <div class="row">
+        <div class="col-2"><strong>Fiches Secli :</strong></div>
+        <div class="col-1">{{stat[1] }}</div>
+    </div>
+    <div class="row">
+        <div class="col-2"><strong>Fiches Secli importées :</strong></div>
+        <div class="col-1">{{stat[2] }}</div>
+    </div>
+    <hr>
+
+</div>
+{% endblock %}

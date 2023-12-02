@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Répertoire{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Chants</h2>
+        <table class="table table-hover table-sm mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Cote</th>
+                    <th scope="col">Cote Éditeur</th>
+                    <th scope="col">Année</th>
+                    <th scope="col">Auteur(s)</th>
+                    <th scope="col">Compositeur(s)</th>
+                    <th scope="col">Éditeur</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for chant in chants %}
+                <tr data-bs-toggle="modal" data-bs-target="#textModal{{ chant.id }}">
+                    <td scope="row">{{ chant.titre }}</td>
+                    <td scope="row">{{ chant.cote }}
+                        {% if chant.coteNew %}
+                            <br><span class="badge bg-secondary">{{ chant.coteNew }}</span>
+                        {% endif %}
+                    </td>
+                    <td scope="row">{{ chant.coteEdit }}</td>
+                    <td scope="row">{{ chant.annee }}</td>
+                    <td scope="row">
+                        {% for auteur in chant.auteur %}
+                            {{ auteur.firstname }} {{ auteur.lastname }}<br>
+                        {% endfor %}
+                    </td>
+                    <td scope="row">
+                        {% for compositeur in chant.compositeur %}
+                            {{ compositeur.firstname }} {{ compositeur.lastname }}<br>
+                        {% endfor %}
+                    </td>
+                    {% if chant.editeur %}
+                        <td scope="row">{{ chant.editeur.nom }}</td>
+                    {% else %}
+                        <td scope="row">-</td>
+                    {% endif %}
+                    <td>
+                        {% include 'chant/_fiche.html.twig' %}
+                        <a href="{{ path('app_chant_edit', {id: chant.id}) }}" class="btn btn-sm btn-success" role="button">Editer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-auto me-auto">
+                <div class="pagination">
+                    {{ knp_pagination_render(chants, null, {}, {
+                        'align': 'center',
+                        'size': 'small',
+                        'rounded': true,
+                    }) }}
+                </div>
+            </div>
+            <div class="col-auto ms-auto">
+                <a href="{{ path('app_chant_new') }}" class="btn btn-sm btn-primary">Nouveau chant</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

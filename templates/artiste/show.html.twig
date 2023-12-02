@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artiste{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Artistes</h2>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ artiste.id }}</td>
+                </tr>
+                <tr>
+                    <th>Civilite</th>
+                    <td>{{ artiste.civilite }}</td>
+                </tr>
+                <tr>
+                    <th>Firstname</th>
+                    <td>{{ artiste.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Lastname</th>
+                    <td>{{ artiste.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>DateNaiss</th>
+                    <td>{{ artiste.dateNaiss }}</td>
+                </tr>
+                <tr>
+                    <th>DateDeces</th>
+                    <td>{{ artiste.dateDeces }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_artiste_index') }}" class="btn btn-sm btn-primary">Retour</a>
+
+        <a href="{{ path('app_artiste_edit', {'id': artiste.id}) }}" class="btn btn-sm btn-warning">Éditer</a>
+
+        {# {{ include('artiste/_delete_form.html.twig') }} #}
+    </div>
+{% endblock %}

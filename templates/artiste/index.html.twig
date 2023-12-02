@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artistes{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Artistes</h2>
+        <table class="table table-hover table-sm mt-4">
+            <thead>
+                <tr>
+                    <th>Civ.</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Date de décès</th>
+                    <th>Actions</th>   
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            {% for artiste in artistes %}
+                <tr>
+                    <td>{{ artiste.civilite }}</td>
+                    <td>{{ artiste.lastname }}</td>
+                    <td>{{ artiste.firstname }}</td>
+                    <td>{{ artiste.dateNaiss }}</td>
+                    <td>{{ artiste.dateDeces }}</td>
+                    <td>
+                        <a href="{{ path('app_artiste_edit', {id: artiste.id}) }}" class="btn btn-sm btn-success" role="button">Editer</a>
+                        <a href="#" class="btn btn-sm btn-danger" role="button">Supprimer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-auto me-auto">
+                <div class="pagination">
+                    {{ knp_pagination_render(artistes, null, {}, {
+                        'align': 'center',
+                        'size': 'small',
+                        'rounded': true,
+                    }) }}
+                </div>
+            </div>
+            <div class="col-auto ms-auto">
+                <a href="{{ path('app_artiste_new') }}" class="btn btn-sm btn-primary">Nouvel artiste</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

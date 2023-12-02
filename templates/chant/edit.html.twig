@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition d'un chant{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Chants</h2>
+        {{ include('chant/_form.html.twig') }}
+    </div>
+{% endblock %}

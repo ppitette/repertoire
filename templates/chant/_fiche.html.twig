@@ -1,0 +1,73 @@
+<!-- Modal -->
+<div class="modal" id="textModal{{ chant.id }}" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h1 class="modal-title fs-3" id="textModalLabel">{{ chant.affich }}</h1>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 fs-6">
+                            {% if chant.coteNew %}
+                                Nouvelle cote : {{ chant.coteNew }}
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 ms.auto fs-6">
+                            {% if chant.coteEdit %}
+                                Cote Éditeur : {{ chant.coteEdit }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 fs-6"><strong>Auteur(s) :</strong><br>
+                            {% for auteur in chant.auteur %}
+                                {{ auteur.firstname }} {{ auteur.lastname }}
+                                {% if loop.first and not loop.last %}<br>{% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6 fs-6"><strong>Compositeur(s) :</strong><br>
+                            {% for compositeur in chant.compositeur %}
+                                {{ compositeur.firstname }} {{ compositeur.lastname }}
+                                {% if loop.first and not loop.last %}<br>{% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if chant.texte %}
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {{ chant.texte|raw }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <em>Texte à enregistrer</em>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    {% if chant.editeur %}
+                        <div class="row">
+                            <div class="col-md-11 fs-6">Éditeur :
+                                {{ chant.editeur }}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

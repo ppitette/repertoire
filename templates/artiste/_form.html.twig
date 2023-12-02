@@ -1,0 +1,35 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-1">
+            {{ form_row(form.civilite, {
+                label: 'Civilité'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.firstname, {
+                label: 'Prénom'
+            }) }}
+        </div>
+        <div class="col-3">
+            {{ form_row(form.lastname, {
+                label: 'Nom'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.dateNaiss, {
+                label: 'Date de naissance'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.dateDeces, {
+                label: 'Date de décès'
+            }) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="{{ path('app_artiste_index') }}" class="btn btn-sm btn-primary">Retour</a>
+            <button class="btn btn-sm btn-success">Enregistrer</button>
+        </div>
+    </div>
+{{ form_end(form) }}

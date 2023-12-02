@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <h2>Fiches SECLI</h2>
+        <form class="row g-3">
+            {{ form_start(form) }}
+                <div class="col-2">
+                    {{ form_widget(form.cote, {'attr': {'placeholder': 'Cote'}}) }}
+                </div>
+                <div class="col-4">
+                    {{ form_widget(form.titre, {'attr': {'placeholder': 'Titre'}}) }}
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                </div>
+            {{ form_end(form) }}
+        </form>
+        <table class="table table-sm mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Cote</th>
+                    <th scope="col">Cote (New)</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Année</th>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Compositeur</th>
+                    <th scope="col">Éditeur</th>
+                    <th scope="col">Imp</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for fiche in fiches %}
+                <tr>
+                    <td scope="row">{{ fiche.cote }}</th>
+                    <td scope="row">{{ fiche.coteNew }}</th>
+                    <td scope="row">{{ fiche.titre }}</th>
+                    <td scope="row">{{ fiche.annee }}</th>
+                    <td scope="row">{{ fiche.auteur }}</th>
+                    <td scope="row">{{ fiche.compositeur }}</th>
+                    <td scope="row">{{ fiche.editeur }}</th>
+                    <td scope="row">
+                        {% if not fiche.isImporte %}
+                            <a href="{{ path('app_chant_import', {id: fiche.id}) }}" class="btn btn-sm" role="button">
+                                <i class="fas fa-file-import"></i>
+                            </a>
+                        {% else %}
+                        {% endif %}
+                    </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-auto me-auto">
+                <div class="pagination">
+                    {{ knp_pagination_render(fiches, null, {}, {
+                        'align': 'center',
+                        'size': 'small',
+                        'rounded': true,
+                    }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

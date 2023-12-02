@@ -1,0 +1,72 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-4">
+            {{ form_row(form.titre, {
+                label: 'Titre'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.annee, {
+                label: 'Année'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.snpls, {
+                label: 'Promotion SNPLS'
+            }) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            {{ form_row(form.ordinaire, {
+                label: 'Ordinaire ?'
+            }) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            {{ form_row(form.cote, {
+                label: 'Cote'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.coteNew, {
+                label: 'Cote (nouvelle)'
+            }) }}
+        </div>
+        <div class="col-2">
+            {{ form_row(form.coteEdit, {
+                label: 'Cote Editeur'
+            }) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.source, {
+                label: 'Source'
+            }) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.auteur, {
+                label: 'Auteur(s)'
+            }) }}
+            {{ form_row(form.compositeur, {
+                label: 'Compositeur(s)'
+            }) }}
+            {{ form_row(form.editeur, {
+                label: 'Editeur'
+            }) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.texte, {
+                label: 'Paroles'
+            }) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="{{ path('app_chant_index') }}" class="btn btn-sm btn-primary">Retour</a>
+            <button class="btn btn-sm btn-success">Enregistrer</button>
+        </div>
+    </div>
+{{ form_end(form) }}
