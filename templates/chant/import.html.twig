@@ -68,6 +68,16 @@
                     </tr>
                     <tr>
                         <td></td>
+                        <td>Ordinaire ?</td>
+                        <td>{{ form_widget(form.ordinaire) }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Paroles</td>
+                        <td>{{ form_widget(form.texte) }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td></td>
                         <td>
                             <button type="submit" class="btn btn-sm btn-primary">{{ button_label|default('Sauvegarder') }}</button>

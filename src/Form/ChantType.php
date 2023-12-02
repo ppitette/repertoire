@@ -23,19 +23,19 @@ class ChantType extends AbstractType
                 'required' => false,
             ])
             ->add('cote', TextType::class, [
-                'required' => true,
+                'required' => false,
             ])
             ->add('coteNew', TextType::class, [
-                'required' => true,
+                'required' => false,
             ])
             ->add('coteEdit', TextType::class, [
-                'required' => true,
+                'required' => false,
             ])
             ->add('snpls', IntegerType::class, [
                 'required' => false,
             ])
             ->add('source', TextType::class, [
-                'required' => true,
+                'required' => false,
             ])
             ->add('ordinaire', CheckboxType::class, [
                 'label' => false,
