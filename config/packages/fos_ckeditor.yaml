@@ -1,0 +1,17 @@
+# config/packages/fos_ckeditor.yaml
+twig:
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+fos_ck_editor:
+    base_path: "build/ckeditor"
+    js_path:   "build/ckeditor/ckeditor.js"
+    configs:
+        main_config:
+            toolbar: standard
+    toolbars:
+        configs:
+            standard: [ "@standard.basic_styles", "@standard.document" ]
+        items:
+            standard.document: ['Source']
+            standard.basic_styles: ['Bold', 'Italic', 'TextColor', 'HorizontalRule', 'RemoveFormat']

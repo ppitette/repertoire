@@ -1,0 +1,11 @@
+/*
+ * assets/styles/app.scss
+ */
+
+ @import "variables";
+ @import "~bootstrap/scss/bootstrap";
+ 
+ body {
+     background-color: $twinkle_blue;
+ }
+ 

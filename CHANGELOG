@@ -1,0 +1,36 @@
+# Changelog
+
+Tous les changements notables apportés à ce projet seront documentés dans ce dossier.
+
+Le format de ce CHANGELOG est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
+et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.0.0] - 2022-12-28
+
+### Added
+
+- page d'accueil
+- assets (images, css)
+- base de données et paramètres d'accès
+- entités secli
+- entités chant
+- entités artiste
+- entités editeur
+
+## [1.0.0] - 2023-02-09
+
+### Added
+
+- controller et template pour l'affichage et la recherche sur les fiches secli
+- import d'une fiche secli dans la table des chants
+- gestion des chant et artistes
+
+## [0.0.0] - 2023-00-00
+
+### Added
+
+### Changed
+
+### Removed
