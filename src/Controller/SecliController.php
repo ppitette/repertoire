@@ -23,14 +23,14 @@ class SecliController extends AbstractController
         $form = $this->createForm(RepSearchType::class, $search);
         $form->handleRequest($request);
 
-        $fiches = $paginator->paginate(
-            $secliRepository->findFiche($search),
+        $seclis = $paginator->paginate(
+            $secliRepository->findSecli($search),
             $request->query->getInt('page', 1),
             12
         );
 
         return $this->render('secli/index.html.twig', [
-            'fiches' => $fiches,
+            'fiches' => $seclis,
             'form' => $form,
         ]);
     }

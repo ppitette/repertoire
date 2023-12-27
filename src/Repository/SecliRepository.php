@@ -32,7 +32,17 @@ class SecliRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findFiche(RepSearch $search): array
+    public function findByFiche($fiche): ?Secli
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.fiche = :fiche')
+            ->setParameter('fiche', $fiche)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function findSecli(RepSearch $search): array
     {
         if ($search->getCote() && $search->getTitre()) {
             dd($search);
