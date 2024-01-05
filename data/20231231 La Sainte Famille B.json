@@ -1,0 +1,105 @@
+{
+   "titre": "La Sainte Famille",
+   "annee": "B",
+   "celeb": [
+      {
+         "date": "2023-12-30",
+         "heure": "18h30",
+         "lieu": "Saint Taurin",
+         "animation": {
+            "personne": "Christine Pitette"
+         },
+         "musique": {
+            "intrument": "Grand Orgue",
+            "personne": "Pascal Pitette"
+         }
+      },
+      {
+         "date": "2023-12-31",
+         "lieu": "Cathédrale",
+         "heure": "10h30",
+         "animation": {
+            "personne": "Christine Pitette"
+         },
+         "musique": {
+            "intrument": "Orgue de Choeur",
+            "personne": "Pascal Pitette"
+         }
+      }
+   ],
+   "items": [
+      {
+         "part": "Entrée",
+         "titre": "Le Fils de Dieu pour nous s’est fait homme",
+         "ref": "IEV15-24"
+      },
+      {
+         "part": "Rite pénitentiel",
+         "titre": "Messe de l’Émmanuel"
+      },
+      {
+         "part": "Gloria",
+         "titre": "Messe de l’Émmanuel"
+      },
+      {
+         "part": "1ère lecture",
+         "ref": "Gn 15, 1-6 ; 21, 1-3"
+      },
+      {
+         "part": "Psaume",
+         "ref": "104 (105), 1-2, 3-4, 5-6, 8-9",
+         "comp": "Michel Wackenheim"
+      },
+      {
+         "part": "Antienne",
+         "texte": "Le Seigneur, c’est lui notre Dieu ; il s’est toujours souvenu de son alliance."
+      },
+      {
+         "part": "2ème lecture",
+         "ref": "He 11, 8.11-12.17-19"
+      },
+      {
+         "part": "Acclamation",
+         "titre": "Messe de l’Émmanuel"
+      },
+      {
+         "part": "Verset",
+         "texte": "Que, dans vos coeurs, règne la paix du Christ ; que la parole du Christ habite en vous de toute sa richesse !"
+      },
+      {
+         "part": "Évangile",
+         "ref": "Lc 2, 22-40"
+      },
+      {
+         "part": "P. Universelle",
+         "refrain": "Jésus, Emmanuel, exauces-nous."
+      },
+      {
+         "part": "Sanctus",
+         "titre": "Messe de l’Émmanuel"
+      },
+      {
+         "part": "Anamnèse",
+         "titre": "Missel Romain n°1"
+      },
+      {
+         "part": "Doxologie",
+         "titre": "Berthier"
+      },
+      {
+         "part": "Agnus",
+         "titre": "Messe de l’Émmanuel"
+      },
+      {
+         "part": "Communion",
+         "titre": "Levons les yeux",
+         "ref": "IEV20-14",
+         "couplets": "1, 2, 5"
+      },
+      {
+         "part": "Envoi",
+         "titre": "Il est né le divin enfant",
+         "ref": "F56"
+      }
+   ]
+}
